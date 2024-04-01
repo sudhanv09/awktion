@@ -9,7 +9,6 @@ export default function Home() {
       <p class="">Bid smart, win big, live bold!</p>
       <div class="flex flex-col items-center justify-center space-y-6">
         <div class="space-x-4">
-          {/* <label for="username">Username:</label> */}
           <input
             type="text"
             name="username"
@@ -17,7 +16,6 @@ export default function Home() {
             placeholder="Zeus"
             value={username()}
             onChange={(event) => {
-              console.log(event.target.value)
               setUsername(event.target.value);
             }}
           />
@@ -27,7 +25,7 @@ export default function Home() {
           type="submit"
           class="rounded-lg border-1 border-solid border-transparent p-4 font-medium bg-[#1a1a1a] cursor-pointer transition-colors hover:border-[#646cff]"
         >
-          Set Username
+          Enter
         </button>
       </div>
     </main>

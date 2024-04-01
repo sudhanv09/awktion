@@ -1,5 +1,5 @@
 import { For, createSignal } from "solid-js";
-import ExhibitCard from "~/components/Exhibits";
+import ExhibitCard from "~/components/ExhibitCard";
 import { exhibitList } from "~/lib/data";
 
 export default function Listings() {
