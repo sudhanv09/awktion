@@ -4,7 +4,7 @@ export default function Home() {
   const [username, setUsername] = createSignal("");
 
   return (
-    <main class="text-center flex flex-col item-center justify-center space-y-8 mx-auto p-4 text-white h-screen">
+    <main class="text-center flex flex-col item-center justify-center space-y-8 p-4 min-w-80 min-h-dvh">
       <h1 class="max-6-xs text-6xl font-semibold">Awktion</h1>
       <p class="">Bid smart, win big, live bold!</p>
       <div class="flex flex-col items-center justify-center space-y-6">
@@ -16,7 +16,8 @@ export default function Home() {
             class="w-96 h-12 text-center bg-[#1a1a1a] text-white rounded-lg"
             placeholder="Zeus"
             value={username()}
-            onInput={(event) => {
+            onChange={(event) => {
+              console.log(event.target.value)
               setUsername(event.target.value);
             }}
           />
