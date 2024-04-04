@@ -3,7 +3,7 @@ interface ExhibitList {
     Name: string;
     Description: string;
     Schedule: 'Ongoing' | 'Scheduled' | 'Ended';
-    DatePosted: Date;
+    DatePosted: string;
     Image: string;
     Participants: number;
 }
