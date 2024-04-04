@@ -1,26 +1,27 @@
 import Indicator from "./Indicator";
 import { Component } from "solid-js";
 
-const ExhibitCard :Component<ExhibitList> = (props) => {
+const ExhibitCard :Component<{exhibit: ExhibitList}> = (props) => {
+  
   return (
     <div class="w-1/2 grid grid-cols-2">
       Exhibit
       <div class="flex flex-col space-y-4">
         <div class="text-left space-y-4">
-          <h1 class="text-3xl">{props.Name}</h1>
-          <p class="font-thin">{props.Description}</p>
+          <h1 class="text-3xl">{props.exhibit.Name}</h1>
+          <p class="font-thin">{props.exhibit.Description}</p>
         </div>
 
         <div class="flex justify-between items-center">
           <div class="flex items-center">
-            <Indicator schedule={props.Schedule} />
-            <p class="font-bold">{props.Schedule}</p>
+            <Indicator schedule={props.exhibit.Schedule} />
+            <p class="font-bold">{props.exhibit.Schedule}</p>
           </div>
 
-          <p class="font-thin">{props.DatePosted}</p>
+          <p class="font-thin">{props.exhibit.DatePosted}</p>
 
           <div class="flex items-center space-x-2">
-            <p>{props.Participants}</p>
+            <p>{props.exhibit.Participants}</p>
             <svg
               class="w-6"
               fill="#000000"
@@ -42,7 +43,7 @@ const ExhibitCard :Component<ExhibitList> = (props) => {
 
         <button
           type="submit"
-          disabled={props.Schedule === "Ended"}
+          disabled={props.exhibit.Schedule === "Ended"}
           class="rounded-lg border-1 border-solid border-transparent p-4 font-medium bg-[#1a1a1a] disabled:bg-neutral-500"
         >
           View

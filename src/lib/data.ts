@@ -5,7 +5,7 @@ date.setHours(date.getHours() + 4)
 const twoHours = date.toLocaleTimeString()
 const twoMonths = date.toISOString().substring(0,10);
 
-export const exhibitList = [
+export const exhibitData: ExhibitList[] = [
     {
       Id: 1,
       Name: "Vintage Art Collection",
@@ -42,6 +42,5 @@ export const exhibitList = [
       Image: "masterpieces.jpg",
       Participants: 100
     },
-    
   ];
   
