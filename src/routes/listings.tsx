@@ -4,7 +4,6 @@ import { exhibitData } from "~/lib/data";
 
 export default function Listings() {
   const [exhibits] = createSignal<ExhibitList[]>(exhibitData);
-  // console.log(exhibits())
 
   return (
     <main class="text-center flex flex-col item-center justify-center space-y-8 p-4 min-w-80 min-h-dvh">
