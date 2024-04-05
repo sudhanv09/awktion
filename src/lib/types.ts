@@ -8,7 +8,7 @@ interface ExhibitList {
     Participants: number;
 }
 
-type User = {
+interface User {
     Id: number;
     Username: string;
     Bid: number;

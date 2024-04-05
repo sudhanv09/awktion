@@ -1,7 +1,19 @@
+import { useNavigate } from "@solidjs/router";
 import { createSignal } from "solid-js";
+import { isServer } from "solid-js/web";
 
 export default function Home() {
-  const [username, setUsername] = createSignal("");
+  const [username, setUsername] = createSignal(
+    !isServer ? localStorage.getItem("user"): ""
+  );
+  console.log(username())
+
+  const nav = useNavigate();
+
+  const registerUser = () => {
+    localStorage.setItem("user", JSON.stringify(username()));
+    nav("/listings", { replace: true });
+  };
 
   return (
     <main class="text-center flex flex-col item-center justify-center space-y-8 p-4 min-w-80 min-h-dvh">
@@ -13,7 +25,7 @@ export default function Home() {
             type="text"
             name="username"
             class="w-96 h-12 text-center bg-[#1a1a1a] text-white rounded-lg"
-            placeholder="Zeus"
+            placeholder="Username"
             value={username()}
             onChange={(event) => {
               setUsername(event.target.value);
@@ -24,6 +36,7 @@ export default function Home() {
         <button
           type="submit"
           class="rounded-lg border-1 border-solid border-transparent p-4 font-medium bg-[#1a1a1a] cursor-pointer transition-colors hover:border-[#646cff]"
+          onClick={registerUser}
         >
           Enter
         </button>
