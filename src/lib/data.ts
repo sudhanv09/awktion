@@ -13,7 +13,8 @@ export const exhibitData: ExhibitList[] = [
       Schedule: 'Ongoing',
       DatePosted: new Date().toISOString().substring(0,10),
       Image: "art.jpg",
-      Participants: 50
+      Participants: 50,
+      HighestBidder: "House"
     },
     {
       Id: 2,
@@ -22,7 +23,8 @@ export const exhibitData: ExhibitList[] = [
       Schedule: 'Scheduled',
       DatePosted: twoHours,
       Image: "sculpture.jpg",
-      Participants: 30
+      Participants: 30,
+      HighestBidder: "House"
     },
     {
       Id: 3,
@@ -31,7 +33,8 @@ export const exhibitData: ExhibitList[] = [
       Schedule: 'Scheduled',
       DatePosted: twoMonths, // Schedule 2 months hence
       Image: "photo.jpg",
-      Participants: 45
+      Participants: 45,
+      HighestBidder: "House"
     },
     {
       Id: 4,
@@ -40,7 +43,9 @@ export const exhibitData: ExhibitList[] = [
       Schedule: 'Ended',
       DatePosted: new Date('2024-01-10').toISOString().substring(0,10),
       Image: "masterpieces.jpg",
-      Participants: 100
+      Participants: 100,
+      HighestBidder: "Mr. X",
+      WinningBid: 10_000
     },
   ];
   

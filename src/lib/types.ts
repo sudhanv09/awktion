@@ -6,6 +6,8 @@ interface ExhibitList {
     DatePosted: string;
     Image: string;
     Participants: number;
+    HighestBidder?: string;
+    WinningBid?: number
 }
 
 interface User {
